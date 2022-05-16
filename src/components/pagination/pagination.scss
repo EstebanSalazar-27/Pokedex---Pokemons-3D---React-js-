@@ -1,0 +1,23 @@
+
+.cont-btn-arrow{
+  display: flex;
+  flex-direction: row;
+  gap: .8rem;
+}
+
+.button-pagination{
+ 
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+
+}
+
+.icon-arrow{
+  color: rgba(255, 255, 255, 0.79);
+  font-size: 1rem;
+}
+span{
+  color: white;
+}

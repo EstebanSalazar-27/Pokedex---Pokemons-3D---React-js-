@@ -1,0 +1,214 @@
+.pokedex__pokemon-card{
+  min-width: 300px;
+  padding: .5rem .5rem;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-basis: 25%;
+  background-color: rgba(10, 9, 35, 0.899);
+  box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.476);
+  filter: brightness(92%) contrast(110%);
+  border-radius: 10px;
+  transform-origin: left;
+  transform: translateX(-1500px);
+  animation: out-in 800ms 1 ease;
+  animation-fill-mode: forwards;
+  z-index: 0;
+  cursor: pointer;
+  
+}
+//  Card-skills-model
+.card-skills-model{
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 40%;  
+  min-height: 200px;
+  overflow:scroll;
+  background-color: rgb(39, 39, 46);
+  transition: transform 100ms ease;
+  z-index: 1;
+  .skills{
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s ease;
+  }
+
+}
+.closed-modal-skills{
+ width: 30px;
+ font-size: .9rem;
+}
+@keyframes out-in{
+  from{
+    opacity: 0;
+    transform: translateX(unset);
+  }
+  to{
+    opacity: unset;
+    transform: translateX(0);
+  }
+}
+.pokemon-card__skills-btn{
+  border: none;
+  background-color: transparent;
+  color: white;
+  background-color: #3d78ef9b;
+  font-weight: 500;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 5px;
+  border-radius: 100px;
+  border:  1px solid rgb(232, 221, 255);
+  cursor: pointer;
+}
+.pokemon-card__img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+ 
+  
+}
+
+.pokemon-card__cont-colum{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  gap: 1rem;
+  flex-basis: 100%;
+  max-width: 200px;
+}
+
+// Pokemon data 
+.pokemon-card__datos{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  
+}
+.pokemon-card__caracteristicas-pokemon{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  
+
+}
+.caracteristica__life-icon{
+  width: 18px;
+  height: 18px;
+}
+
+.pokemon-card_pokemon-sprite{
+  width: 95px;
+  min-width: 50px;
+  max-width: 95px;
+  display: block;
+ 
+}
+
+.pokemon-card__name-pokemon{
+  font-size: .950rem;
+  font-weight: 600;
+  font-family:'Times New Roman', Times, serif;
+  letter-spacing: .250px;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.909);
+}
+.pokemon-card__id-pokemon{
+  font-size: .750rem;
+  font-weight: 600;
+  font-family:'Times New Roman', Times, serif;
+  text-transform: capitalize;
+  color: rgb(255, 255, 255);
+}
+
+.pokemon-card__pokemon-type{
+  padding: .2rem .3rem;
+  color: white;
+  border-radius: 2px;
+ background-color: rgb(255, 0, 0);
+}
+.button-type{
+  padding: .3rem .4rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: .9rem;
+  font-weight: 500;
+  background-color: black;
+  text-transform: capitalize;
+  border-radius: 3px;
+  color: white;
+}
+
+
+//  Mobile display cards
+
+@media (max-width:900px){
+  .pokedex__pokemon-card{
+    flex-basis: 100%;
+  }
+}
+
+
+
+
+
+
+// btn-type custom color
+.bg-poison{
+  background-color: rgb(185, 126, 202);
+}
+.bg-grass{
+  background-color: rgb(155, 203, 79);
+}
+.bg-fire{
+  background-color: rgb(249,124,35);
+}
+.bg-water{
+  background-color: rgb(75, 145, 190);
+}
+.bg-bug{
+  background-color: rgb(114,158,62);
+}
+.bg-normal{
+  background-color: rgb(165,171,178) ;
+}
+.bg-electric{
+  background-color: rgb(231,211,37);
+}
+.bg-flying{
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  background-color: #3dc7ef;
+}
+.bg-ground{
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  background-color: #f7de3f;
+}
+.bg-fairy{
+  background-color: #fdb9e9;
+}
+.bg-fighting{
+  background-color: #d56723;
+}
+.bg-psychic{
+  background-color: #f366b9;
+}
+.bg-rock{
+  background-color: #a38c21;
+}
+.bg-steel{
+  background-color: #9eb7b8;
+}
+.bg-ice{
+  background-color: #51c4e7;
+}
+.bg-ghost{
+  background-color: #707070;
+}

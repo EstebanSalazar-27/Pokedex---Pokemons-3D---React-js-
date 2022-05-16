@@ -1,0 +1,24 @@
+
+// Desktop display
+
+.navbar{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color:rgba(51, 49, 195, 0.79) ;
+  margin-bottom: 4rem;
+
+}
+
+.navbar__brand{
+  width: 100px;
+  cursor: pointer;
+ 
+}
+.navbar__pokebola{
+  width: 40px;
+  cursor: pointer;
+}

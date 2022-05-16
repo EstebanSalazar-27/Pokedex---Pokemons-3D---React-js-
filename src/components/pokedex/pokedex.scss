@@ -1,0 +1,47 @@
+.header{
+  width: 55%;
+  height: 30px;
+  margin: 0 auto;
+  padding:1.5rem 1rem;
+  
+  background-color: rgba(10, 9, 35, 0.899);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__tittle{
+  color: white;
+  font-size: 2rem;
+}
+.header__pagination{
+  color: white;
+}
+
+.pokedex{
+  width: 70%;
+  padding: 3rem 0;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem ;
+  
+
+}
+
+
+
+//  mobile display
+
+@media (max-width:900px){
+  .header{
+    width: 70%;
+  }
+}

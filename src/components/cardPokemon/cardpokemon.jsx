@@ -1,15 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./cardPokemon.scss"
-import { useState } from "react";
+import { useState, useContext} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
+import { FavoriteContext } from "../../context/context";
+
 
 const CardPokemon  = ({idx,name,url,sprites,weight,types,abilities}) =>{
   const [skillsPokemon, setSkillsPokemon] = useState(false)
   const cardModel = skillsPokemon ? "skills-model" : ""
   const pokemonType = types
+  const {favoritePokemons, updateFavoritePokemon} = useContext(FavoriteContext)
   const pokemonAbilities = abilities
+  const redHearth = "https://cdn-icons-png.flaticon.com/512/929/929417.png";
+  const blackhearth = "https://cdn-icons.flaticon.com/png/512/3477/premium/3477186.png?token=exp=1653076712~hmac=77c73225332763678ad53caf1da79459";
+  const hearth = favoritePokemons.includes(name) ?  redHearth :   blackhearth;
+
+ const addPokemonTofavorite = (e) =>{
+  e.preventDefault()
+  updateFavoritePokemon(name)
+ }
   const style = {
     animationDelay: `${idx * 100}ms`,
     transformOrigin: "left"
@@ -47,7 +58,7 @@ const CardPokemon  = ({idx,name,url,sprites,weight,types,abilities}) =>{
         {pokemonType.map((type,idx) =>{
           return <div className={`button-type bg-${type.type.name}`} key={idx+1}>{type.type.name}</div>
         })} 
-        <img src="https://cdn-icons-png.flaticon.com/128/929/929417.png" className="caracteristica__life-icon" alt="" />
+        <button className="pokemon-card__btn-favorite" onClick={addPokemonTofavorite}><img src={hearth} className="caracteristica__life-icon" alt="" /></button>
        </div>
      </div>
      

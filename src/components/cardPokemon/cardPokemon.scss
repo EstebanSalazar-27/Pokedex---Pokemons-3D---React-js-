@@ -21,11 +21,11 @@
 //  Card-skills-model
 .card-skills-model{
   flex-direction: column;
-  gap: 1rem;
   position: fixed;
   top: 40%;  
-  min-height: 200px;
-  overflow:scroll;
+  width: 40%;
+  height: 500px;
+  
   background-color: rgb(39, 39, 46);
   transition: transform 100ms ease;
   z-index: 1;

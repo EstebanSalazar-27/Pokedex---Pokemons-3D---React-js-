@@ -4,7 +4,6 @@ import SearchBar from "./components/searchBar/search";
 import Pokedex from "./components/pokedex/pokedex";
 import getPokemons, { getPokemonData } from "./services/PokeApi";
 import { useState, useEffect } from "react";
-import Spinner from "./components/spinner/spinner";
 import { FavoriteProvider } from "./context/context";
 
 function App() {

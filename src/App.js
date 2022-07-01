@@ -12,18 +12,11 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
-<<<<<<< HEAD
   const [favorite, setFavoritesPokemon] = useState([])
   console.log(favorite)
-  const fetchPokemons = async () =>{
-   
-    try{
-=======
-
   const fetchPokemons = async () => {
 
     try {
->>>>>>> master
       setLoading(true)
       const data = await getPokemons(20, 25 * page)
       const getPokemonInfo = data.results.map(async (pokemon) => {
@@ -42,41 +35,29 @@ function App() {
   useEffect(() => {
     fetchPokemons()
   }, [page]);
-<<<<<<< HEAD
-  
- const updateFavoritePokemons = (name) =>{
-   const update = [...favorite]
-   const isFavorite = update.indexOf(name)
-   if(isFavorite >= 0){
-     update.slice(isFavorite, 1)
-   }else{
-     update.push(name)
-   }
-   setFavoritesPokemon(update)
- }
+
+  const updateFavoritePokemons = (name) => {
+    const update = [...favorite]
+    const isFavorite = update.indexOf(name)
+    if (isFavorite >= 0) {
+      update.slice(isFavorite, 1)
+    } else {
+      update.push(name)
+    }
+    setFavoritesPokemon(update)
+  }
   return (
     <FavoriteProvider value={{
-      favoritePokemons:favorite,
-      updateFavoritePokemon: updateFavoritePokemons    
-      }}>
+      favoritePokemons: favorite,
+      updateFavoritePokemon: updateFavoritePokemons
+    }}>
       <div className="App">
-        <Navbar/>
-        <SearchBar/>
-        
-        <Pokedex page={page} loading={loading} total={total} setPage={setPage} pokemons={pokemons}/>
+        <Navbar />
+        <SearchBar />
+
+        <Pokedex page={page} loading={loading} total={total} setPage={setPage} pokemons={pokemons} />
       </div>
     </FavoriteProvider>
-=======
-
-
-  return (
-    <div className="App">
-      <Navbar />
-      <SearchBar />
-
-      <Pokedex page={page} loading={loading} total={total} setPage={setPage} pokemons={pokemons} />
-    </div>
->>>>>>> master
   );
 }
 

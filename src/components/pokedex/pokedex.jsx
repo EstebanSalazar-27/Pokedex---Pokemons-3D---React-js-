@@ -5,7 +5,7 @@ import Pagination from "../pagination/pagination"
 import Spinner from "../spinner/spinner";
 import { SearchValue } from "../../context/searchbarContext";
 
-export default function Pokedex({ pokemons, page, setPage, total, loading }) {
+export default function Pokedex({ pokemons, loading }) {
 
   const { searchValue } = useContext(SearchValue)
 
@@ -14,7 +14,7 @@ export default function Pokedex({ pokemons, page, setPage, total, loading }) {
     <div>
       <header className="header">
         <h1 className="header__tittle">Pokedex</h1>
-   
+
       </header>
       {loading
         ?

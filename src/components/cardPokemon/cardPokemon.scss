@@ -11,9 +11,10 @@
   filter: brightness(92%) contrast(110%);
   border-radius: 10px;
   transform-origin: left;
-  transform: translateX(-1500px);
   animation: out-in 800ms 1 ease;
   animation-fill-mode: forwards;
+  transform: translateY(50%);
+  opacity: 0;
   z-index: 0;
   cursor: pointer;
   
@@ -43,11 +44,11 @@
 @keyframes out-in{
   from{
     opacity: 0;
-    transform: translateX(unset);
+    transform: translateY(unset);
   }
   to{
-    opacity: unset;
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .pokemon-card__skills-btn{

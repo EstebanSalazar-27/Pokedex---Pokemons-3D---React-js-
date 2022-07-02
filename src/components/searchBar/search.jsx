@@ -16,10 +16,7 @@ export default function SearchBar() {
     setSearchValue(evt.target.value.toLowerCase())
   }
 
-  const buscarPokemon = async (e) => {
-    const data = await searchPokemon(valueSearch)
-    setPokemon(data)
-  }
+ 
 
   return (
     <div className="cont-searchbar">

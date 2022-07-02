@@ -5,6 +5,7 @@ import Pokedex from "./components/pokedex/pokedex";
 import getPokemons, { getPokemonData } from "./services/PokeApi";
 import { useState, useEffect } from "react";
 import { FavoriteProvider } from "./context/context";
+import SearchValueProvider from "./context/searchbarContext";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -12,20 +13,18 @@ function App() {
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
   const [favorite, setFavoritesPokemon] = useState([])
-  console.log(favorite)
-  const fetchPokemons = async () => {
 
+  const fetchPokemons = async () => {
     try {
       setLoading(true)
-      const data = await getPokemons(20, 25 * page)
+      const data = await getPokemons()
       const getPokemonInfo = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url)
       })
       const results = await Promise.all(getPokemonInfo)
       setPokemons(results)
-      console.log(results)
       setLoading(false)
-      setTotal(Math.ceil(data.count / 25))
+     
     } catch (err) {
     }
   }
@@ -52,10 +51,12 @@ function App() {
     }}>
       <div className="App">
         <Navbar />
-        <SearchBar />
-
-        <Pokedex page={page} loading={loading} total={total} setPage={setPage} pokemons={pokemons} />
+        <SearchValueProvider>
+          <SearchBar />
+          <Pokedex page={page} loading={loading} total={total} setPage={setPage} pokemons={pokemons} />
+        </SearchValueProvider>
       </div>
+
     </FavoriteProvider>
   );
 }

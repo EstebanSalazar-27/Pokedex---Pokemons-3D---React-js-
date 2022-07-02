@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import "./searchbar.scss"
 import { useState } from "react";
 import { searchPokemon } from "../../services/PokeApi";
+import { SearchValue } from "../../context/searchbarContext";
 
-import "./searchbar.scss"
 
 export default function SearchBar() {
   const [valueSearch, setValueSearch] = useState("")
   const [pokemon, setPokemon] = useState("")
+  // Context
+  const { setSearchValue } = useContext(SearchValue)
+
 
   const valueToState = (evt) => {
-    setValueSearch(evt.target.value)
+    setSearchValue(evt.target.value.toLowerCase())
   }
 
   const buscarPokemon = async (e) => {
     const data = await searchPokemon(valueSearch)
     setPokemon(data)
-   
   }
-  console.log(pokemon)
+
   return (
     <div className="cont-searchbar">
 

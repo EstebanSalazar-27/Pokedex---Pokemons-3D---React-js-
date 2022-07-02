@@ -26,7 +26,7 @@ export default function SearchBar() {
 
       <input type="text" className="searchbar" placeholder="Search Pokemon" onChange={valueToState} />
 
-      <button className="searchbar__btn" onClick={() => buscarPokemon()}>Search</button>
+      
 
     </div>
 
